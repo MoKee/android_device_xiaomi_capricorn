@@ -19,21 +19,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from gemini device
-$(call inherit-product, device/xiaomi/gemini/device.mk)
+$(call inherit-product, device/xiaomi/capricorn/device.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := cm_gemini
-PRODUCT_DEVICE := gemini
+PRODUCT_NAME := cm_capricorn
+PRODUCT_DEVICE := capricorn
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MI 5
+PRODUCT_MODEL := MI 5s
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
+#PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="gemini" \
     PRODUCT_NAME="gemini" \
     BUILD_FINGERPRINT="Xiaomi/gemini/gemini:6.0.1/MXB48T/6.9.29:user/release-keys" \

@@ -17,7 +17,7 @@
 
 set -e
 
-DEVICE=gemini
+DEVICE=capricorn
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks

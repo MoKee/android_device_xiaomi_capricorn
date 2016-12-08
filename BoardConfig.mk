@@ -16,9 +16,9 @@
 
 BOARD_VENDOR := xiaomi
 
-DEVICE_PATH := device/xiaomi/gemini
+DEVICE_PATH := device/xiaomi/capricorn
 
-TARGET_SPECIFIC_HEADER_PATH := device/xiaomi/gemini/include
+TARGET_SPECIFIC_HEADER_PATH := device/xiaomi/capricorn/include
 
 # Architecture
 TARGET_ARCH := arm64
@@ -38,7 +38,7 @@ ENABLE_CPUSETS := true
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := gemini
+TARGET_OTA_ASSERT_DEVICE := capricorn
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
@@ -46,7 +46,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -188,8 +188,8 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 USE_SENSOR_MULTI_HAL := true
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_gemini
-TARGET_RECOVERY_DEVICE_MODULES := libinit_gemini
+TARGET_INIT_VENDOR_LIB := libinit_capricorn
+TARGET_RECOVERY_DEVICE_MODULES := libinit_capricorn
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -206,4 +206,4 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
--include vendor/xiaomi/gemini/BoardConfigVendor.mk
+-include vendor/xiaomi/capricorn/BoardConfigVendor.mk
