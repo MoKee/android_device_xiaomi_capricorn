@@ -283,8 +283,6 @@ etc/camera/imx362_chromatix.xml
 etc/camera/imx378_chromatix.xml
 etc/camera/imx378_liteon_chromatix.xml
 etc/camera/imx378_semco_chromatix.xml
-etc/camera/msm8937_camera.xml
-etc/camera/msm8952_camera.xml
 etc/camera/msm8996_camera.xml
 etc/camera/ov13850_chromatix.xml
 etc/camera/ov13850_q13v06k_chromatix.xml
@@ -359,6 +357,7 @@ vendor/lib/libmmcamera_isp_scaler_viewfinder46.so
 vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_snr47.so
 vendor/lib/libmmcamera_isp_sub_module.so
+vendor/lib/libmpbase.so
 
 # Charger
 bin/hvdcp_opti
@@ -408,7 +407,6 @@ etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
 framework/tcmclient.jar
--priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/lib64/libdpmctmgr.so
 vendor/lib64/libdpmfdmgr.so
 vendor/lib64/libdpmframework.so
@@ -439,6 +437,7 @@ vendor/lib64/libssd.so
 vendor/lib/libQSEEComAPI.so
 
 # Fingerprint
+bin/qfp-daemon
 bin/qvop-daemon
 vendor/lib64/libqvop-service.so
 vendor/lib/libqvop-service.so
@@ -740,8 +739,6 @@ etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
-framework/qti-telephony-common.jar
-framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
 vendor/lib64/libconfigdb.so
@@ -1891,3 +1888,33 @@ vendor/lib/sensors.xiaomials.so
 vendor/lib/sensors.xiaomiprox.so
 vendor/lib64/sensors.xiaomials.so
 vendor/lib64/sensors.xiaomiprox.so
+lib/modules/ansi_cprng.ko
+lib/modules/backlight.ko
+lib/modules/br_netfilter.ko
+lib/modules/core_ctl.ko
+lib/modules/evbug.ko
+lib/modules/generic_bl.ko
+lib/modules/lcd.ko
+lib/modules/mmc_block_test.ko
+lib/modules/mmc_test.ko
+lib/modules/qca_cld/qca_cld_wlan.ko
+lib/modules/rdbg.ko
+lib/modules/spidev.ko
+lib/modules/test-iosched.ko
+lib/modules/ufs_test.ko
+lib/modules/wil6210.ko
+
+etc/firmware/a225_pfp.fw
+etc/firmware/a225_pm4.fw
+etc/firmware/a225p5_pm4.fw
+etc/firmware/a300_pfp.fw
+etc/firmware/a300_pm4.fw
+etc/firmware/a330_pfp.fw
+etc/firmware/a330_pm4.fw
+etc/firmware/a420_pfp.fw
+etc/firmware/a420_pm4.fw
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
+
+lib/hw/audio.primary.msm8996.so
+lib64/hw/audio.primary.msm8996.so
