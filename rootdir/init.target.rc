@@ -102,6 +102,11 @@ service fingerprintd /system/bin/fingerprintd
     user system
     group system sdcard_rw
 
+service qfp-daemon /system/bin/qfp-daemon
+    class late_start
+    user system
+    group system drmrpc diag input sdcard_rw
+
 service qvop-daemon /system/bin/qvop-daemon
     class late_start
     user system
@@ -218,14 +223,17 @@ on property:init.svc.surfaceflinger=restarting
     stop ppd
 
 on property:init.svc.zygote=stopped
+    stop qfp-daemon
     stop displayfeature
     stop ppd
 
 on property:init.svc.zygote=running
+    start qfp-daemon
     start displayfeature
     start ppd
 
 on property:init.svc.zygote=restarting
+    stop qfp-daemon
     stop displayfeature
     stop ppd
 
