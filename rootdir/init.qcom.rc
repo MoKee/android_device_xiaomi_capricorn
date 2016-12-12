@@ -70,6 +70,9 @@ on boot
     chown system system /sys/devices/soc/soc:fpc_fpc1020/irq
     chown system system /sys/devices/soc/soc:fpc_fpc1020/enable_wakeup
 
+    chown system system /dev/captouch
+    chmod 0660 /dev/captouch
+
     chmod 0660 /sys/module/bluetooth_power/parameters/power
 
     chmod 0660 /sys/class/rfkill/rfkill0/state
@@ -738,6 +741,11 @@ service qcom-sh /system/bin/sh /init.qcom.sh
 
 service leds-sh /system/bin/sh /system/etc/init.leds.sh
     class core
+    user root
+    oneshot
+
+service captouch-sh /system/bin/sh /system/etc/init.captouch.sh
+    class late_start
     user root
     oneshot
 
