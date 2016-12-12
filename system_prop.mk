@@ -41,7 +41,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.imglib.fddsp=1 \
     persist.camera.xm.green.r=0.98 \
-    persist.camera.xm.green.b=0.97
+    persist.camera.xm.green.b=0.97 \
+    persist.camera.hal3hfr.enable=0
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
