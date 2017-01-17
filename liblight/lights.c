@@ -189,6 +189,7 @@ static int set_light_backlight(struct light_device_t* dev,
 {
     int err = 0;
     int brightness = rgb_to_brightness(state);
+    brightness = brightness*16;
     if(!dev) {
         return -1;
     }
