@@ -1,9 +1,9 @@
 Copyright (C) 2016 - The CyanogenMod Project
 
-Device configuration for Xiaomi Mi 5s
+Device configuration for Xiaomi Mi 5s and Xiaomi Mi5s Plus
 ==============
 
-The Xiaomi Mi 5s (codenamed _"Capricorn"_) is a high-end smartphone from Xiaomi.
+The Xiaomi Mi 5s (codenamed _"Capricorn"_) and Xiaomi Mi 5s Plus (codenamed _"Natrium"_) are high-end smartphone from Xiaomi.
 
 It was announced in September 2016, in four flavours. Release date was September 2016.
 
@@ -25,4 +25,4 @@ It was announced in September 2016, in four flavours. Release date was September
 
 ## Device picture
 
-![Xiaomi Mi 5](http://xiaomi-mi.com/uploads/CatalogueImage/xiaomi-mi-5s-gray_14506_1475064497.jpg "Xiaomi Mi 5s in black")
+![Xiaomi Mi 5s](http://xiaomi-mi.com/uploads/CatalogueImage/xiaomi-mi-5s-gray_14506_1475064497.jpg "Xiaomi Mi 5s in black")
