@@ -116,9 +116,9 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # CM Hardware
 BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    $(DEVICE_PATH)/cmhw
-BOARD_USES_CYANOGEN_HARDWARE := true
+    hardware/mokee/mkhw \
+    $(DEVICE_PATH)/mkhw
+BOARD_USES_MOKEE_HARDWARE := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input2/wake_gesture"
 
 # CNE and DPM

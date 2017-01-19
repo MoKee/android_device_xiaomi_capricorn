@@ -20,7 +20,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import cyanogenmod.preference.RemotePreferenceUpdater;
+import mokee.preference.RemotePreferenceUpdater;
 
 public class DozeReceiver extends RemotePreferenceUpdater {
 

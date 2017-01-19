@@ -7,7 +7,7 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="cyanogenmod.permission.MANAGE_REMOTE_PREFERENCES" />
+    <uses-permission android:name="mokee.permission.MANAGE_REMOTE_PREFERENCES" />
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
@@ -22,7 +22,7 @@
         <receiver android:name="com.cyanogenmod.settings.doze.DozeReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="cyanogenmod.intent.action.UPDATE_PREFERENCE" />
+                <action android:name="mokee.intent.action.UPDATE_PREFERENCE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
