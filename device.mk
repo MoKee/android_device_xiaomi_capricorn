@@ -25,6 +25,8 @@ $(call inherit-product-if-exists, vendor/xiaomi/capricorn/capricorn-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+WITH_SU := true
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
