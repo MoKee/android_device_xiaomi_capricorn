@@ -1,2 +1,2 @@
-add_lunch_combo cm_capricorn-eng
-add_lunch_combo cm_capricorn-userdebug
+add_lunch_combo mk_capricorn-eng
+add_lunch_combo mk_capricorn-userdebug
