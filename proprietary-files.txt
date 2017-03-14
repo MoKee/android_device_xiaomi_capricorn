@@ -462,7 +462,7 @@ framework/com.qti.location.sdk.jar
 lib64/libloc_ds_api.so
 -lib/libloc_api_v02.so
 lib/libloc_ds_api.so
--priv-app/com.qualcomm.location/com.qualcomm.location.apk
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|3f65325b2825c1b1ca94d0e532581b90c3fbc851
 vendor/bin/slim_daemon
 vendor/lib64/hw/flp.default.so
 vendor/lib64/libalarmservice_jni.so
