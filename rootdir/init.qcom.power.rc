@@ -33,6 +33,15 @@ on boot
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-3
 
+    # Add a cpuset for the camera daemon
+    # we want all cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0-3
+    write /dev/cpuset/camera-daemon/mems 0
+    chown system system /dev/cpuset/camera-daemon
+    chown system system /dev/cpuset/camera-daemon/tasks
+    chmod 0664 /dev/cpuset/camera-daemon/tasks
+
     # Enable sched boost
     write /proc/sys/kernel/sched_boost 1
 
@@ -156,6 +165,13 @@ on class_start:late_start
 
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler "bfq"
+
+    # Update cpusets now that boot is complete and we want better load balancing
+    write /dev/cpuset/top-app/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 0-2
+    write /dev/cpuset/foreground/cpus 0-2
+    write /dev/cpuset/background/cpus 0
+    write /dev/cpuset/system-background/cpus 0-2
 
 on property:init.svc.recovery=running
     trigger enable-low-power
