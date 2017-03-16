@@ -1,2 +1,0 @@
-add_lunch_combo mk_capricorn-eng
-add_lunch_combo mk_capricorn-userdebug
