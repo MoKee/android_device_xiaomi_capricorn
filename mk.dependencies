@@ -1,5 +1,9 @@
 [
  {
+   "repository": "android_kernel_xiaomi_capricorn",
+   "target_path": "kernel/xiaomi/capricorn"
+ },
+ {
    "repository": "android_device_qcom_common",
    "target_path": "device/qcom/common"
  },
