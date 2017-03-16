@@ -40,3 +40,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
     PRIVATE_BUILD_DESC="gemini-user 6.0.1 MXB48T 6.9.29 release-keys"
 
 TARGET_VENDOR := Xiaomi
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.mk.maintainer=wood
