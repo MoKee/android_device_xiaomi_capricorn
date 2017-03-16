@@ -34,3 +34,6 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 TARGET_VENDOR := Xiaomi
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.mk.maintainer=wood
