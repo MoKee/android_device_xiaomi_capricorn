@@ -112,13 +112,10 @@ static const char GREEN_BLINK_FILE[]
 static const char BLUE_BLINK_FILE[]
         = "/sys/class/leds/blue/blink";
 
-static const char RGB_BLINK_FILE[]
-        = "/sys/class/leds/rgb/rgb_blink";
-
 #define RAMP_SIZE 8
 static int BRIGHTNESS_RAMP[RAMP_SIZE]
         = { 0, 12, 25, 37, 50, 72, 85, 100 };
-#define RAMP_STEP_DURATION 50
+#define RAMP_STEP_DURATION 255
 
 /**
  * Device methods
@@ -263,10 +260,16 @@ static int set_speaker_light_locked(struct light_device_t* dev,
     red = (colorRGB >> 16) & 0xFF;
     green = (colorRGB >> 8) & 0xFF;
     blue = colorRGB & 0xFF;
+    // Bias for true white
+    if (colorRGB != 0 && red == green && green == blue) {
+        blue = (blue * 171) / 256;
+    }
     blink = onMS > 0 && offMS > 0;
 
     // Disable all blinking to start
-    write_int(RGB_BLINK_FILE, 0);
+    write_int(RED_BLINK_FILE, 0);
+    write_int(GREEN_BLINK_FILE, 0);
+    write_int(BLUE_BLINK_FILE, 0);
 
     if (blink) {
         stepDuration = RAMP_STEP_DURATION;
@@ -277,47 +280,44 @@ static int set_speaker_light_locked(struct light_device_t* dev,
         }
 
         // Red
-        write_int(RED_START_IDX_FILE, 0);
-        duty = get_scaled_duty_pcts(red);    
-        write_str(RED_DUTY_PCTS_FILE, duty);
-        write_int(RED_PAUSE_LO_FILE, offMS);
+        //write_int(RED_START_IDX_FILE, 0);
+        //duty = get_scaled_duty_pcts(red);    
+        //write_str(RED_DUTY_PCTS_FILE, duty);
+        //write_int(RED_PAUSE_LO_FILE, offMS);
         // The led driver is configured to ramp up then ramp
         // down the lut. This effectively doubles the ramp duration.
-        write_int(RED_PAUSE_HI_FILE, pauseHi);
-        write_int(RED_RAMP_STEP_MS_FILE, stepDuration);
-        free(duty);
+        //write_int(RED_PAUSE_HI_FILE, pauseHi);
+        //write_int(RED_RAMP_STEP_MS_FILE, stepDuration);
+        //free(duty);
 
         // Green
-        write_int(GREEN_START_IDX_FILE, RAMP_SIZE);
-        duty = get_scaled_duty_pcts(green);
-        write_str(GREEN_DUTY_PCTS_FILE, duty);
-        write_int(GREEN_PAUSE_LO_FILE, offMS);
-        // The led driver is configured to ramp up then ramp
-        // down the lut. This effectively doubles the ramp duration.
-        write_int(GREEN_PAUSE_HI_FILE, pauseHi);
-        write_int(GREEN_RAMP_STEP_MS_FILE, stepDuration);
-        free(duty);
+        //write_int(GREEN_START_IDX_FILE, RAMP_SIZE);
+        //duty = get_scaled_duty_pcts(green);
+        //write_str(GREEN_DUTY_PCTS_FILE, duty);
+        //write_int(GREEN_PAUSE_LO_FILE, offMS);
+        //// The led driver is configured to ramp up then ramp
+        //// down the lut. This effectively doubles the ramp duration.
+        //write_int(GREEN_PAUSE_HI_FILE, pauseHi);
+        //write_int(GREEN_RAMP_STEP_MS_FILE, stepDuration);
+        //free(duty);
 
-        // Blue
-        write_int(BLUE_START_IDX_FILE, RAMP_SIZE * 2);
-        duty = get_scaled_duty_pcts(blue);
-        write_str(BLUE_DUTY_PCTS_FILE, duty);
-        write_int(BLUE_PAUSE_LO_FILE, offMS);
-        // The led driver is configured to ramp up then ramp
-        // down the lut. This effectively doubles the ramp duration.
-        write_int(BLUE_PAUSE_HI_FILE, pauseHi);
-        write_int(BLUE_RAMP_STEP_MS_FILE, stepDuration);
-        free(duty);
+        //// Blue
+        //write_int(BLUE_START_IDX_FILE, RAMP_SIZE * 2);
+        //duty = get_scaled_duty_pcts(blue);
+        //write_str(BLUE_DUTY_PCTS_FILE, duty);
+        //write_int(BLUE_PAUSE_LO_FILE, offMS);
+        //// The led driver is configured to ramp up then ramp
+        //// down the lut. This effectively doubles the ramp duration.
+        //write_int(BLUE_PAUSE_HI_FILE, pauseHi);
+        //write_int(BLUE_RAMP_STEP_MS_FILE, stepDuration);
+        //free(duty);
 
         // Start the party
-        write_int(RGB_BLINK_FILE, 1);
+        write_int(RED_BLINK_FILE, red);
+        write_int(GREEN_BLINK_FILE, green);
+        write_int(BLUE_BLINK_FILE, blue);
 
     } else {
-        if (red == 0 && green == 0 && blue == 0) {
-            write_int(RED_BLINK_FILE, 0);
-            write_int(GREEN_BLINK_FILE, 0);
-            write_int(BLUE_BLINK_FILE, 0);
-        }
         write_int(RED_LED_FILE, red);
         write_int(GREEN_LED_FILE, green);
         write_int(BLUE_LED_FILE, blue);
