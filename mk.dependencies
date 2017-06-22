@@ -1,5 +1,9 @@
 [
   {
+    "repository": "android_vendor_xiaomi_capricorn",
+    "target_path": "vendor/xiaomi/capricorn"
+  },
+  {
     "repository": "android_device_xiaomi_msm8996-common",
     "target_path": "device/xiaomi/msm8996-common"
   }
