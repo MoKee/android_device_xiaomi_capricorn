@@ -23,7 +23,7 @@ $(call inherit-product, vendor/xiaomi/capricorn/capricorn-vendor.mk)
 # Local overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-mokee
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -62,7 +62,7 @@ PRODUCT_COPY_FILES += \
 
 # Touch HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xiaomi_8996
+    vendor.mokee.touch@1.0-service.xiaomi_8996
 
 # Thermal
 PRODUCT_COPY_FILES += \
